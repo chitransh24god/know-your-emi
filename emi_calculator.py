@@ -161,12 +161,28 @@ div[data-baseweb="input"] input {
     gap: 14px;
     margin-bottom: 1.8rem;
 }
+@media (max-width: 768px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+    .block-container { padding: 1rem 0.8rem 3rem 0.8rem !important; }
+    .hero-wrap { padding: 1.6rem 1.2rem 1.4rem 1.2rem !important; }
+    .hero-title { font-size: 2rem !important; }
+    .hero-sub { font-size: 0.82rem !important; }
+    .input-section { padding: 1.2rem 1rem !important; }
+    .chart-card { padding: 1rem 0.8rem 0.4rem 0.8rem !important; }
+    .table-card { padding: 1rem 0.8rem !important; }
+    .kpi-card { padding: 1rem 1rem !important; border-radius: 14px !important; }
+    .kpi-icon { font-size: 1.1rem !important; margin-bottom: 0.3rem !important; }
+    .kpi-label { font-size: 0.62rem !important; letter-spacing: 0.05em !important; white-space: normal !important; }
+    .kpi-value { font-size: 1.05rem !important; }
+}
 .kpi-card {
     border-radius: 18px;
     padding: 1.4rem 1.5rem;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.06);
+    min-width: 0;
+    word-break: break-word;
 }
 .kpi-card.blue   { background: linear-gradient(135deg, #1a3a6e 0%, #1e4d8c 100%); }
 .kpi-card.green  { background: linear-gradient(135deg, #1a4a3a 0%, #1e6b52 100%); }
@@ -181,10 +197,16 @@ div[data-baseweb="input"] input {
     background: rgba(255,255,255,0.04);
 }
 .kpi-icon  { font-size: 1.4rem; margin-bottom: 0.6rem; display: block; }
-.kpi-label { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.5);
-             text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
-.kpi-value { font-size: 1.45rem; font-weight: 700; color: #ffffff;
-             font-family: 'Nunito', sans-serif; line-height: 1.2; }
+.kpi-label {
+    font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.kpi-value {
+    font-size: 1.45rem; font-weight: 700; color: #ffffff;
+    font-family: 'Nunito', sans-serif; line-height: 1.3;
+    word-break: break-word; overflow-wrap: anywhere;
+}
 .kpi-card.blue   .kpi-value { color: #90cdf4; }
 .kpi-card.green  .kpi-value { color: #68d391; }
 .kpi-card.red    .kpi-value { color: #fc8181; }
