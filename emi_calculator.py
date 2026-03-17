@@ -344,7 +344,7 @@ col1, col2, col3 = st.columns(3, gap="large")
 with col1:
     principal = st.number_input(
         "💰  Loan Amount (₹)",
-        min_value=10_000, max_value=100_000_000,
+        min_value=1, max_value=99_999_999_999,
         value=1_000_000, step=10_000, format="%d"
     )
 with col2:
@@ -423,8 +423,9 @@ with chart_col1:
         marker=dict(colors=["#3182ce", "#e53e3e"],
                     line=dict(color="rgba(0,0,0,0.3)", width=3)),
         textinfo="label+percent",
+        texttemplate="%{label}<br>%{percent:.2%}",   # ← add this line
         textfont=dict(family=FONT_FAMILY, size=12, color="white"),
-        hovertemplate="<b>%{label}</b><br>₹%{value:,.2f}<br>%{percent}<extra></extra>",
+        hovertemplate="<b>%{label}</b><br>₹%{value:,.2f}<br>%{percent:.2%}<extra></extra>",
     ))
     fig_pie.add_annotation(
         text=f"<b>{fmt_inr(total_payable)}</b><br>Total",
