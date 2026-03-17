@@ -520,7 +520,6 @@ with dl_col:
 st.markdown("""
 <div class="footer">
   <b>Know Your EMI</b> &nbsp;·&nbsp;
-  EMI = P × r × (1+r)ⁿ / ((1+r)ⁿ − 1) &nbsp;·&nbsp;
   Results are indicative only. Consult your bank for exact figures.
 </div>
 """, unsafe_allow_html=True)
